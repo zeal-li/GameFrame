@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>qss/mainwindow.qss</file>
+        <file>icon/toolIcon.png</file>
+    </qresource>
+</RCC>
