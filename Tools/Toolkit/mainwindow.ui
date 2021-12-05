@@ -27,6 +27,12 @@
       <height>150</height>
      </rect>
     </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
    </widget>
    <widget class="QPushButton" name="btnScript">
     <property name="geometry">
@@ -441,15 +447,21 @@
    </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
      <width>980</width>
-     <height>23</height>
+     <height>22</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu_M">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
     <property name="title">
      <string>菜单(&amp;M)</string>
     </property>
@@ -474,6 +486,9 @@
    </property>
   </action>
   <action name="action_C">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
    <property name="text">
     <string>项目管理(&amp;C)</string>
    </property>

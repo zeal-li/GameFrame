@@ -7,7 +7,7 @@
 #include "configclass.h"
 #include "timeclass.h"
 #include "invokeclass.h"
-#include "logclass.h"
+#include "LogClass.h"
 
 #include "dialog/newprojectdialog.h"
 #include "dialog/projectmanagerdialog.h"
@@ -41,7 +41,7 @@ bool MainWindow::init()
     file.open(QFile::ReadOnly);
     if(!file.isOpen())
     {
-        logClass::getInstance().printlog(logClass::LOG_TYPE_ERROR, "MainWindow::init, qss/mainwindow.qss open fail!");
+        LogClass::getInstance().printLog(LogClass::LOG_TYPE_ERROR, "MainWindow::init, qss/mainwindow.qss open fail!");
         return false;
     }
 

@@ -1,5 +1,5 @@
 ﻿#include "configclass.h"
-#include "logclass.h"
+#include "LogClass.h"
 
 static const char *projectRoot = "ProjectList";
 static const char *defaultProjectKey = "DefaultProject";
@@ -38,7 +38,7 @@ bool configClass::init()
     m_qsettings = new QSettings("./config/projectCfg.ini", QSettings::IniFormat);
     if(nullptr == m_qsettings)
     {
-        logClass::getInstance().printlog(logClass::LOG_TYPE_ERROR, "configClass::init error, new QSettings error!");
+        LogClass::getInstance().printLog(LogClass::LOG_TYPE_ERROR, "configClass::init error, new QSettings error!");
         return false;
     }
 
@@ -111,7 +111,7 @@ bool configClass::addProjectSvnPath(const QString &projectName, const QString &p
 
     if(QVariant::Invalid == project.type())
     {
-        logClass::getInstance().printlog(logClass::LOG_TYPE_WARNING, "configClass::addProjectSvnPath error, Attempt to add svn path for not exit project!");
+        LogClass::getInstance().printLog(LogClass::LOG_TYPE_WARNING, "configClass::addProjectSvnPath error, Attempt to add svn path for not exit project!");
         return false;
     }
 
@@ -132,7 +132,7 @@ bool configClass::deleteProjectSvnPath(const QString &projectName, const QString
 
     if(QVariant::Invalid == project.type())
     {
-        logClass::getInstance().printlog(logClass::LOG_TYPE_WARNING, "configClas::deleteProjectSvnPath erro, Attempt to delete svn path for not exit project!");
+        LogClass::getInstance().printLog(LogClass::LOG_TYPE_WARNING, "configClas::deleteProjectSvnPath erro, Attempt to delete svn path for not exit project!");
         return false;
     }
 
@@ -219,13 +219,13 @@ bool configClass::addProjectScript(const QString &projectName, const QString &sc
 
     if(QVariant::Invalid == project.type())
     {
-        logClass::getInstance().printlog(logClass::LOG_TYPE_WARNING, "configClass::addProjectScript error, Attempt to add script for not exit project!");
+        LogClass::getInstance().printLog(LogClass::LOG_TYPE_WARNING, "configClass::addProjectScript error, Attempt to add script for not exit project!");
         return false;
     }
 
     if("" == scriptName)
     {
-        logClass::getInstance().printlog(logClass::LOG_TYPE_WARNING, "configClass::addProjectScript error, script name is null!");
+        LogClass::getInstance().printLog(LogClass::LOG_TYPE_WARNING, "configClass::addProjectScript error, script name is null!");
         return false;
     }
 
@@ -252,7 +252,7 @@ bool configClass::deleteProjectScript(const QString &projectName, const QString 
 
     if(QVariant::Invalid == project.type())
     {
-        logClass::getInstance().printlog(logClass::LOG_TYPE_WARNING, "configClas::deleteProjectScript erro, Attempt to delete Script for not exit project!");
+        LogClass::getInstance().printLog(LogClass::LOG_TYPE_WARNING, "configClas::deleteProjectScript erro, Attempt to delete Script for not exit project!");
         return false;
     }
 
@@ -359,7 +359,7 @@ bool configClass::addGlobalScript(const QString &scriptName, const QString &scri
 {
     if("" == scriptName)
     {
-        logClass::getInstance().printlog(logClass::LOG_TYPE_WARNING, "configClass::addGlobalScript error, script name is null!");
+        LogClass::getInstance().printLog(LogClass::LOG_TYPE_WARNING, "configClass::addGlobalScript error, script name is null!");
         return false;
     }
 
@@ -475,7 +475,7 @@ bool configClass::setProjectExportInputPath(const QString &projectName, const QS
 
     if(QVariant::Invalid == project.type())
     {
-        logClass::getInstance().printlog(logClass::LOG_TYPE_WARNING, "configClass::addProjectExportInputPath error, Attempt to add path for not exit project!");
+        LogClass::getInstance().printLog(LogClass::LOG_TYPE_WARNING, "configClass::addProjectExportInputPath error, Attempt to add path for not exit project!");
         return false;
     }
 
@@ -496,7 +496,7 @@ bool configClass::deleteProjectExportInputPath(const QString &projectName)
 
     if(QVariant::Invalid == project.type())
     {
-        logClass::getInstance().printlog(logClass::LOG_TYPE_WARNING, "configClas::deleteProjectExportInputPath erro, Attempt to delete path for not exit project!");
+        LogClass::getInstance().printLog(LogClass::LOG_TYPE_WARNING, "configClas::deleteProjectExportInputPath erro, Attempt to delete path for not exit project!");
         return false;
     }
 
@@ -517,7 +517,7 @@ bool configClass::setProjectExportOutputPath(const QString &projectName, const Q
 
     if(QVariant::Invalid == project.type())
     {
-        logClass::getInstance().printlog(logClass::LOG_TYPE_WARNING, "configClass::addProjectExportOutputPath error, Attempt to add path for not exit project!");
+        LogClass::getInstance().printLog(LogClass::LOG_TYPE_WARNING, "configClass::addProjectExportOutputPath error, Attempt to add path for not exit project!");
         return false;
     }
 
@@ -538,7 +538,7 @@ bool configClass::deleteProjectExportOutputPath(const QString &projectName)
 
     if(QVariant::Invalid == project.type())
     {
-        logClass::getInstance().printlog(logClass::LOG_TYPE_WARNING, "configClas::deleteProjectExportOutputPath erro, Attempt to delete path for not exit project!");
+        LogClass::getInstance().printLog(LogClass::LOG_TYPE_WARNING, "configClas::deleteProjectExportOutputPath erro, Attempt to delete path for not exit project!");
         return false;
     }
 

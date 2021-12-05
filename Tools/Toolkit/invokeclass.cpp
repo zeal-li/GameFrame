@@ -1,5 +1,5 @@
 ﻿#include "invokeclass.h"
-#include "logclass.h"
+#include "LogClass.h"
 #include <QDesktopServices>
 #include <QUrl>
 #include <QTextCodec>
@@ -28,7 +28,7 @@ bool invokeclass::init()
     m_qprocess = new QProcess;
     if(nullptr == m_qprocess)
     {
-        logClass::getInstance().printlog(logClass::LOG_TYPE_ERROR, "invokeclass::init error, new QProcess error!");
+        LogClass::getInstance().printLog(LogClass::LOG_TYPE_ERROR, "invokeclass::init error, new QProcess error!");
         return false;
     }
 

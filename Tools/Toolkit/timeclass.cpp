@@ -23,6 +23,13 @@ bool timeClass::init()
     return true;
 }
 
+QString timeClass::getCurrentDateString()
+{
+    QDateTime current_date_time = QDateTime::currentDateTime();
+    QString current_date = current_date_time.toString("yyyy-MM-dd");
+    return current_date;
+}
+
 QString timeClass::getCurrentDateTimeString()
 {
     QDateTime current_date_time = QDateTime::currentDateTime();

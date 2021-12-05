@@ -13,6 +13,7 @@ public:
 
     bool init();
 
+    QString getCurrentDateString();
     QString getCurrentDateTimeString();
 
 private:

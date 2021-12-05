@@ -25,10 +25,10 @@ DEFINES += QT_DEPRECATED_WARNINGS
 CONFIG += c++11
 
 SOURCES += \
+    LogClass.cpp \
         main.cpp \
         mainwindow.cpp \
     configclass.cpp \
-    logclass.cpp \
     timeclass.cpp \
     invokeclass.cpp \
     dialog/basedialog.cpp \
@@ -42,10 +42,10 @@ SOURCES += \
     dialog/globalscrtipmanagerdialog.cpp
 
 HEADERS += \
+    LogClass.h \
         mainwindow.h \
     configclass.h \
     stdafx.h \
-    logclass.h \
     timeclass.h \
     invokeclass.h \
     errornum.h \
